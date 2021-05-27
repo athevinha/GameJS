@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="description" content="Onslaught! Arena is an HTML5 game made by Lost Decade Games. Fight off the horde with medieval weapons and powerups!">
+	<meta name="keywords" content="onslaught arena, html5, chrome webstore, indie, browser-based, lost decade games, javascript, chiptunes, arcade, retro, oldschool, geoff blair, matt hackett, joshua morse">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/horde.css?v={{VERSION}}">
+	<title>Onslaught! Arena</title>
+</head>
+<body class="{{TYPE}}">
+
+	<div class="hidden">
+		<h1>Onslaught! Arena</h1>
+		<p>
+			<strong>Onslaught! Arena</strong>
+			is an HTML5 game made by <a href="http://www.lostdecadegames.com/">Lost Decade Games</a>.
+		</p>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><a href="http://www.lostdecadegames.com" target="_blank">Blog</a></li>
+			<li><a href="http://goo.gl/WbQQ3" target="_blank">Twitter</a></li>
+			<li><a href="http://goo.gl/CNHBo" target="_blank">Facebook</a></li>
+		</ul>
+	</div>
+
+	{{AD_LEADERBOARD}}
+
+	<div id="stage">
+		<div id="tip">
+			<div id="tip_message">
+				<span>Enjoy the demo!</span>
+				Buy the full version on the
+				<a href="http://goo.gl/COiGK" target="_blank">Chrome Web Store</a>
+				or
+				<a href="http://itunes.apple.com/us/app/onslaught-arena/id418268106" target="_blank">Mac App Store</a>
+				!
+			</div>
+		</div>
+	</div>
+
+	<script>
+	/*
+	This content (c) copyright 2010 Lost Decade Games, LLC.
+	Guys, we worked hard on this. Please don't do anything shady with it.
+	Thanks!
+	*/
+	(function () {
+		{{GAME_CODE}}
+	}());
+	</script>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-16927444-5']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+</body>
+</html>
