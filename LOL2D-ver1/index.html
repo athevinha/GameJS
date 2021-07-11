@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lien Minh Huyen Thoai 2D</title>
+
+<a href="https://www.freecounterstat.com" title="visitor counter"><img src="https://counter3.stat.ovh/private/freecounterstat.php?c=7a6ey27xhu5aqhfkx4fwsj1p83rcme5w" border="0" title="visitor counter" alt="visitor counter"></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script type="text/javascript" src="library/p5.collide.min.js"></script>
+    <script type="text/javascript" src="library/scenemanager.js"></script>
+    <script type="text/javascript" src="js/variables.js"></script>
+    <script type="text/javascript" src="js/classes/GameMap.js"></script>
+    <script type="text/javascript" src="js/classes/ObjectsInGame.js"></script>
+    <script type="text/javascript" src="js/classes/Abilities.js"></script>
+    <script type="text/javascript" src="js/classes/Effects.js"></script>
+    <script type="text/javascript" src="js/classes/Charaters.js"></script>
+    <script type="text/javascript" src="js/scenes/game.js"></script>
+    <script type="text/javascript" src="js/scenes/loading.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <!-- The overlay -->
+    <div class="overlay" id="menuWhenDie">
+        <div class="menu">
+            <input type="text" id="ip-name" placeholder="Your name...">
+            <div id="color-picker-wrapper">
+                <input type="color" value="#ff0000" id="pickColor">
+            </div>
+            <!-- Chọn tướng -->
+            <select id="selectNhanVat">
+                <script type="text/javascript">
+                var tuong = ["Yasuo", "Jinx", "Lux", "Blitzcrank", "Yasuo_tt7"];
+                for (var t of tuong) {
+                    document.write(`<option value="` + t + `">` + t + `</option>`)
+                }
+                </script>
+            </select>
+            <!-- URL mode -->
+            <label class="myCheckboxContainer">URF mode
+                <input type="checkbox" id="inpUrf">
+                <span class="checkmark"></span>
+            </label>
+            <!-- HackMode -->
+            <label class="myCheckboxContainer">Hacker mode
+                <input type="checkbox" id="inpHackMode">
+                <span class="checkmark"></span>
+            </label>
+            <!--Play options-->
+            <button id="solo" class="btn-play green">New Game</button>
+
+            <button id="cachchoi-en" class="btn-play gray">How to Play</button>
+            <div id="guide-en" class="guide">
+                <p><b><i>Move, Attack, Kill, Win</i></b></p>
+                <p>========================</p>
+                <p><b>Move </b>: <u>Left/Right click</u> </p>
+                <p><b>Attack </b>: <u>Q W E R</u> , Currently each general has only one ability Q, Except Yasuo_tt7 has full 4 abilitys</p>
+                <p><b>Zoom In/Out </b>: <u>Scroll mouse wheel</u> </p>
+                <p><b>Pause/Play </b>: <u>ESC</u> </p>
+                <p>========================</p>
+                <p><b>Hacker mode</b>: <u>P (on/off)</u>. When enabled, we will show the path of abilities and champions, make it easier for you to play</p>
+                <p><b>Mute all</b>: <u>O (on/off)</u>. When enabled, the AI champions will not attack you</p>
+                <p><b>Move Camera</b>: <u>SPACE (on/off)</u>. When enabled, the camera is free to move, you can move the cursor to the edges of the browser to move the view.</p>
+                <p></p>
+            </div>
+
+            <button id="cachchoi-vn" class="btn-play gray">Cách Chơi</button>
+            <div id="guide-vn" class="guide">
+                <p><b><i>Di chuyển, Né, Tấn công, Kết Liễu</i></b></p>
+                <p>========================</p>
+                <p><b>Di chuyển </b>: Nhấp chuột trái/phải tại vị trí muốn tới, tướng sẽ tự di chuyển tới vị trí chỉ định</p>
+                <p><b>Tấn công </b>: Q W E R, ấn giữ để nhắm trước khi dùng chiêu,
+                    nhiều tướng chưa có đủ các chiêu</p>
+                <p><b>Phóng to/Thu nhỏ </b>: <u>Lăn chuột giữa</u> </p>
+                <p><b>Tạm dừng - Tiếp tục </b>: Phím ESC</p>
+                <p>========================</p>
+                <p><b>Hacker</b>: P (tắt/mở). Khi mở sẽ hiện đường đi của các chiêu thức, giúp dễ né hơn</p>
+                <p><b>Câm lặng tất cả</b>: O (tắt/mở). Khi mở thì tướng máy sẽ không tấn công</p>
+                <p><b>Di chuyển tầm nhìn</b>: SPACE (tắt/mở). Khi mở tầm nhìn sẽ không đi theo người chơi nữa. Khi đó có thể đưa chuột ra rìa trang web để di chuyển tầm nhìn</p>
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+
+</html>
