@@ -37,7 +37,6 @@
       </p>
     </noscript>
     <script>
-      // window.addEventListener("message", receiveMessageFromIndex, false);
       var // Game vars //
 
         canvas,
@@ -343,12 +342,13 @@
       /**
        * Update forground, bird and pipes position
        */
-      function call_back_user(e) {
-        // call_back_user: (user) => {
-        //   call_back_user(user);
-        // },
-        alert(user.username);
-      }
+      // let user_crr_in4 = [];
+      // window.addEventListener("message", call_back_users, false);
+      // function call_back_users(e) {
+      //   console.log(e.data);
+      //   user_crr_in4 = e.data;
+      // }
+      one = true;
       function update() {
         frames++;
 
@@ -356,13 +356,22 @@
           fgpos = (fgpos - 2) % 14;
         } else {
           // set best score to maximum score
-          best = Math.max(best, score);
-          console.log("");
-          window.parent.postMessage({ scores: score, best: best }, "*");
-          localStorage.setItem("best", best);
+          if (one == true) {
+            best = Math.max(best, score);
+
+            window.parent.postMessage(
+              {
+                score: score,
+              },
+              "*"
+            );
+            localStorage.setItem("best", best);
+            one = false;
+          }
         }
         if (currentstate === states.Game) {
           pipes.update();
+          one = true;
         }
 
         bird.update();
