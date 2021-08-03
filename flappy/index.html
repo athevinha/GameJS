@@ -37,6 +37,7 @@
       </p>
     </noscript>
     <script>
+      window.addEventListener("message", receiveMessageFromIndex, false);
       var // Game vars //
 
         canvas,
@@ -353,8 +354,6 @@
         } else {
           // set best score to maximum score
           best = Math.max(best, score);
-
-          window.addEventListener("message", receiveMessageFromIndex, false);
           window.parent.postMessage({ score: score }, "*");
           localStorage.setItem("best", best);
         }
