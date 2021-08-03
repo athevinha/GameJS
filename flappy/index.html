@@ -344,6 +344,9 @@
        * Update forground, bird and pipes position
        */
       function call_back_user(e) {
+        // call_back_user: (user) => {
+        //   call_back_user(user);
+        // },
         alert(user.username);
       }
       function update() {
@@ -354,16 +357,8 @@
         } else {
           // set best score to maximum score
           best = Math.max(best, score);
-          window.parent.postMessage(
-            {
-              score: score,
-              // call_back_user: (user) => {
-              //   call_back_user(user);
-              // },
-              best: best,
-            },
-            "*"
-          );
+          console.log("");
+          window.parent.postMessage({ scores: score, best: best }, "*");
           localStorage.setItem("best", best);
         }
         if (currentstate === states.Game) {
