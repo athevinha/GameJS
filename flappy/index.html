@@ -342,6 +342,9 @@
       /**
        * Update forground, bird and pipes position
        */
+      function receiveMessageFromIndex(e) {
+        alert(res.data);
+      }
       function update() {
         frames++;
 
@@ -350,6 +353,8 @@
         } else {
           // set best score to maximum score
           best = Math.max(best, score);
+
+          window.addEventListener("message", receiveMessageFromIndex, false);
           window.parent.postMessage({ score: score }, "*");
           localStorage.setItem("best", best);
         }
