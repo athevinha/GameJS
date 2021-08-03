@@ -37,7 +37,7 @@
       </p>
     </noscript>
     <script>
-      window.addEventListener("message", receiveMessageFromIndex, false);
+      // window.addEventListener("message", receiveMessageFromIndex, false);
       var // Game vars //
 
         canvas,
@@ -343,8 +343,8 @@
       /**
        * Update forground, bird and pipes position
        */
-      function receiveMessageFromIndex(e) {
-        alert(e.data);
+      function call_back_user(e) {
+        alert(user.username);
       }
       function update() {
         frames++;
@@ -354,7 +354,15 @@
         } else {
           // set best score to maximum score
           best = Math.max(best, score);
-          window.parent.postMessage({ score: score }, "*");
+          window.parent.postMessage(
+            {
+              score: score,
+              call_back_user: (user) => {
+                call_back_user(user);
+              },
+            },
+            "*"
+          );
           localStorage.setItem("best", best);
         }
         if (currentstate === states.Game) {
