@@ -93,7 +93,7 @@
             var n = currentstate === states.Splash ? 10 : 5;
             this.frame += frames % n === 0 ? 1 : 0;
             this.frame %= this.animation.length;
-
+            // if(bird.y >= 600) currentstate=
             // in splash state make bird hover up and down and set
             // rotation to zero
             if (currentstate === states.Splash) {
@@ -351,7 +351,9 @@
       one = true;
       function update() {
         frames++;
-
+        if (bird.y <= 0) {
+          currentstate = states.Score;
+        }
         if (currentstate !== states.Score) {
           fgpos = (fgpos - 2) % 14;
         } else {
