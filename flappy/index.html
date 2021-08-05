@@ -351,7 +351,7 @@
       one = true;
       function update() {
         frames++;
-        if (bird.y <= 0) {
+        if (bird.y <= -10) {
           currentstate = states.Score;
         }
         if (currentstate !== states.Score) {
