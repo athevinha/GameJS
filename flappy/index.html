@@ -71,11 +71,24 @@
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>FlappyJS</title>
 
     <script src="sprite.js"></script>
-
     <style>
       canvas {
         display: block;
@@ -85,6 +98,16 @@
         bottom: 0;
         left: 0;
         right: 0;
+      }
+      .share_button {
+        position: fixed;
+        width: 10vw;
+        left: 45vw;
+        height: 6vh;
+        color: black;
+        top: 60vh;
+        z-index: 1000;
+        border-radius: 20px;
       }
     </style>
   </head>
@@ -98,6 +121,13 @@
         >.
       </p>
     </noscript>
+    <!-- <a
+      href="http://www.facebook.com/sharer.php?s=100
+        &p[url]=https://athevinha.github.io/GameJS/flappy"
+      class="btn btn-info popup share_button"
+    >
+      Shared <i class="fa fa-facebook"></i>
+    </a> -->
     <script>
       var // Game vars //
 
